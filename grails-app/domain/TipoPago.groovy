@@ -1,0 +1,3 @@
+enum TipoPago {
+  EFECTIVO, TARJETA
+}

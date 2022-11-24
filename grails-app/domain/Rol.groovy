@@ -1,0 +1,3 @@
+enum Rol {
+  TITULAR, TECNICO, AUXILIAR, ADJUNTO
+}
