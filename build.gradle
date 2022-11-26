@@ -22,15 +22,25 @@ apply plugin:"com.github.erdi.webdriver-binaries"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"com.bertramlabs.asset-pipeline"
 
+
 repositories {
     mavenCentral()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
+
 configurations {
     developmentOnly
+    groovy
     runtimeClasspath {
         extendsFrom developmentOnly
+    }
+    dependencies {
+        groovy 'org.apache.groovy:groovy-all:4.0.0'
+    }
+    task downloadGroovy(type: Copy) {
+        from configurations.groovy
+        into file('groovy-jars')
     }
 }
 
